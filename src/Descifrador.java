@@ -30,7 +30,7 @@ public class Descifrador {
     }
 
     public File verificador(String[] array, String rutaResultado) throws IOException {
-        File resultado = new File(rutaResultado+"\\Resultado.txt");
+        File resultado = new File(rutaResultado+"\\ResultadoInstruccionesEncriptadas.txt");
         resultado.createNewFile();
         FileWriter fw = new FileWriter(resultado);
         BufferedWriter bw = new BufferedWriter(fw);
