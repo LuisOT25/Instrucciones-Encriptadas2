@@ -7,8 +7,6 @@ public class Intrucciones_encriptadas {
         Scanner scan = new Scanner(System.in);
         String ruta = scan.next();
         Descifrador obj1 = new Descifrador();
-        for (String ii:obj1.lectorDeArchivo(ruta)) {
-            System.out.println(ii);
-        }
+        obj1.verificador(obj1.lectorDeArchivo(ruta));
     }
 }
