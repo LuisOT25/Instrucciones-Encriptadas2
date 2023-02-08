@@ -1,4 +1,4 @@
-public class Intrucciones_encriptadas {
+public class Instrucciones_encriptadas {
     public static void main(String[] args) throws Exception {
         try {
             if (args.length != 2) {
