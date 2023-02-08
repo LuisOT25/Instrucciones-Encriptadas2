@@ -1,10 +1,10 @@
-public class Instrucciones_encriptadas {
+public class InstruccionesEncriptadas {
     public static void main(String[] args) throws Exception {
         try {
             if (args.length != 2) {
                 throw new Exception("El programa debe recibir dos argumentos: una ruta de entrada y una de salida");
             }
-            Archivos_handler archivosHandler = new Archivos_handler(args[0],args[1]);
+            ArchivosHandler archivosHandler = new ArchivosHandler(args[0],args[1]);
             archivosHandler.crearArchivoResultados();
 
 

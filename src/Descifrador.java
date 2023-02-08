@@ -15,6 +15,14 @@ public class Descifrador {
         }
         return mensaje;
     }
+    public boolean validarInstruccion(String instruccion){
+        for (int indice = 0; indice < instruccion.length()-1; indice++) {
+            if (instruccion.charAt(indice) == instruccion.charAt(indice + 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
     public boolean validarInstrucciones(String instruccion, String mensaje){
         if (mensaje.contains(instruccion)){
             return true;

@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.Scanner;
 
-public class Archivos_handler {
+public class ArchivosHandler {
     String rutaEntrada;
     String rutaSalida;
 
-    public Archivos_handler(String rutaEntrada, String rutaSalida) {
+    public ArchivosHandler(String rutaEntrada, String rutaSalida) {
         this.rutaEntrada = rutaEntrada;
         this.rutaSalida = rutaSalida;
     }
@@ -41,7 +41,9 @@ public class Archivos_handler {
                 FileWriter fw = new FileWriter(resultado);
                 BufferedWriter bw = new BufferedWriter(fw);
                 String mensaje=descifrador.limpiarMensaje(leerArchivo()[3]);
-                if (descifrador.validarInstrucciones(leerArchivo()[1],mensaje )){
+                if (descifrador.validarInstrucciones(leerArchivo()[1],mensaje) && descifrador.validarInstrucciones(leerArchivo()[2],mensaje)) {
+                    throw new RuntimeException("Maximo puede existir una instruccion escondida por mensaje");
+                }else if (descifrador.validarInstrucciones(leerArchivo()[1],mensaje )){
                     bw.write("SI");
                     bw.newLine();
                     bw.write("NO");

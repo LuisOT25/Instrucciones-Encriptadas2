@@ -2,6 +2,10 @@ public class VerificadorCondiciones {
 
     public boolean VerificadorCondiciones(String[] archivo){
         try {
+            Descifrador descifrador = new Descifrador();
+            if (descifrador.validarInstruccion(archivo[1])==false || descifrador.validarInstruccion(archivo[2])==false ){
+                throw new RuntimeException("Las instrucciones no deberian tener dos letras iguales seguidas");
+            }
             String[] longitudes = archivo[0].split(" ");
             if (Integer.parseInt(longitudes[0]) != archivo[1].length()){throw new RuntimeException("La longitud de la instruccion 1 no coincide");}
             if (Integer.parseInt(longitudes[0])<2){throw new RuntimeException("La longitud de la instruccion 1 no puede ser menor a 2");}
